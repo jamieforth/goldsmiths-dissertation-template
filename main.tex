@@ -1,0 +1,129 @@
+% Intended LaTeX compiler: xelatex + biber
+% Compile with latexmk should Just Work™
+% latexmk -xelatex -shell-escape main.tex
+
+\documentclass[12pt, a4paper]{report}
+
+\usepackage[a4paper,top=3cm,bottom=3cm,left=4cm,right=3cm]{geometry}
+
+\usepackage{graphicx}           % \includegraphics
+\usepackage{grffile}            % allow periods and spaces in graphics
+                                % file names
+
+\usepackage{caption}            % flexible captions
+\usepackage{float}              % custom floats and the H option
+\usepackage{subfig}             % combine several figures into one
+\usepackage{wrapfig}            % for figure placement
+\usepackage{rotating}           % for sideways figures and tables
+
+\usepackage{longtable}          % multipage tables
+\usepackage{tabu}               % tabular, tabular* and tabularx
+                                % replacements
+\usepackage{booktabs}           % prettier tables
+
+\usepackage{hyperref}           % for cross references
+\hypersetup{
+ pdfauthor={},
+ pdftitle={},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={},
+ pdflang={British},
+ colorlinks,
+ linkcolor=,
+ urlcolor=
+}
+
+\usepackage{fontspec}
+\defaultfontfeatures{Mapping=tex-text}
+\setmainfont{Linux Libertine O}
+\setsansfont{Linux Biolinum O}
+\setmonofont{Inconsolata}
+% \setmainfont{Liberation Serif}
+% \setsansfont{Liberation Sans}
+% \setmonofont{Liberation Mono}
+
+
+\usepackage{csquotes}           % context sensitive quotations
+\usepackage{polyglossia}        % babel replacement for xelatex
+\setmainlanguage[variant=uk]{english}
+
+\usepackage{amssymb}            % additional maths symbols
+\usepackage{amsthm}             % for theorems etc.
+
+\usepackage{mathtools}          % amsmath plus fixes
+\usepackage{unicode-math}       % include unicode characters in maths
+
+\usepackage{algorithmic}        % typeset pseudo-code
+\usepackage[chapter]{algorithm} % float algorithmic blocks (e.g. add caption)
+
+\usepackage{url}                % typeset urls
+
+% If you use Tikz
+% \usepackage{tikz}
+% \usetikzlibrary{fit}
+% \usetikzlibrary{shapes}
+% \usetikzlibrary{external}
+% \tikzexternalize
+% \tikzset{external/system call={xelatex \tikzexternalcheckshellescape -halt-on-error -interaction=batchmode -jobname "\image" "\texsource"}}
+% \tikzsetexternalprefix{extfigures/}
+
+\usepackage{setspace}           % increase line-spacing
+\onehalfspacing
+
+\usepackage{paralist}           % less space in lists
+\let\itemize\compactitem
+\let\description\compactdesc
+\let\enumerate\compactenum
+
+\usepackage{chngcntr}           % continuous footnote counting
+\counterwithout{footnote}{chapter}
+
+% biblatex+biber for references
+\usepackage[style=authoryear,backend=biber]{biblatex}
+\ExecuteBibliographyOptions{
+  sorting=nyt,
+  maxbibnames=99,
+  maxcitenames=2,
+  firstinits=true,
+  urldate=long,
+  isbn=false,
+  eprint=false,
+  uniquename=allinit,
+  uniquelist=minyear
+}
+
+\addbibresource{refs.bib}
+
+\author{author}
+\date{\today}
+\title{title}
+
+\input{symbols}                 % custom latex commands
+\input{front-matter}            % title page
+
+\begin{document}
+
+\maketitle
+
+\include{abstract}
+\include{acknowledgements}
+\include{license}
+\include{publications}
+
+\tableofcontents
+\listoftables
+\listoffigures
+\include{abbreviations}
+
+\include{introduction}
+
+% additional chapters…
+
+\include{conclusions}
+
+\appendix
+\include{notational-conventions}
+
+\printbibliography
+\end{document}

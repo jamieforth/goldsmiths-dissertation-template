@@ -1,0 +1,124 @@
+% Generic notation
+\newcommand{\setof}[1]{\ensuremath{\left \{ #1 \right \}}}
+\newcommand{\tuple}[1]{\ensuremath{\left \langle #1 \right \rangle }}
+\newcommand{\vecb}[1]{\ensuremath{\mathbf{#1}}}
+\newcommand{\matb}[1]{\ensuremath{\mathbf{#1}}}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+
+% Pattern discovery
+\newcommand{\SIA}{\mbox{\texttt{SIA}}}
+\newcommand{\SIATEC}{\mbox{\texttt{SIATEC}}}
+\newcommand{\COSIATEC}{\mbox{\texttt{COSIATEC}}}
+
+\newcommand{\patternP}{\ensuremath{P}}
+\newcommand{\datasetD}{\ensuremath{D}}
+%\newcommand{\Pmtp}{\ensuremath{P_{\textsc{mtp}}}}
+\newcommand{\Ptec}{\ensuremath{P'}}
+\newcommand{\Ptecn}[1]{\ensuremath{\Ptec_{#1}}}
+\newcommand{\tec}{\mathcal{T}}
+\newcommand{\translator}{\vecb{t}}
+\newcommand{\translatorSetT}{\ensuremath{T}} % set of vectors, not
+                                % equiv. to familyF
+
+% Cormen set-cover symbols
+\newcommand{\setX}{\ensuremath{X}}
+\newcommand{\familyF}{\ensuremath{\mathcal{F}}}
+\newcommand{\subsetS}{\ensuremath{S}}
+\newcommand{\coverC}{\ensuremath{\mathcal{C}}}
+\newcommand{\coverCi}{\ensuremath{\mathcal{C}_{i}}}
+
+% SIA functions
+\DeclareMathOperator{\fcoverage}{coverage}
+\DeclareMathOperator{\fcoveragei}{coverage_{i}}
+%\DeclareMathOperator{\funcovered}{uncovered}
+\DeclareMathOperator{\fcompressionratio}{compression\;ratio}
+\DeclareMathOperator{\fcompactness}{compactness}
+\DeclareMathOperator{\fcompactnesssegv}{compactness-v}
+\DeclareMathOperator{\fweight}{weight}
+
+\DeclareMathOperator{\fsegment}{\mathit{segment}}
+\DeclareMathOperator{\fsegmentv}{\mathit{segment-v}}
+\DeclareMathOperator{\fvoice}{\mathit{voice}}
+\DeclareMathOperator{\fvoices}{\mathit{voices}}
+\DeclareMathOperator{\fstart}{\mathit{start}}
+\DeclareMathOperator{\fend}{\mathit{end}}
+
+\newcommand{\heuristic}{h}
+\newcommand{\weightW}{W_{\heuristic}}
+
+% Point set symbolic
+\newcommand{\sonset}{\ensuremath{\texttt{onset}}}
+\newcommand{\smpitch}{\ensuremath{\texttt{mpitch}}}
+\newcommand{\svoice}{\ensuremath{\texttt{voice}}}
+\newcommand{\scpitch}{\ensuremath{\texttt{cpitch}}}
+\newcommand{\sdur}{\ensuremath{\texttt{dur}}}
+\newcommand{\scpint}{\ensuremath{\texttt{cpint}}}
+\newcommand{\sioi}{\ensuremath{\texttt{ioi}}}
+
+% Function from sym to geo
+% \newcommand{\fioi}{\textit{ioi}}
+% \newcommand{\fcpint}{\textit{cpint}}
+
+
+% Point set geometry
+\newcommand{\onset}{\ensuremath{\textsc{onset}}}
+\newcommand{\cpitch}{\ensuremath{\textsc{cpitch}}}
+\newcommand{\dur}{\ensuremath{\textsc{dur}}}
+\newcommand{\cpint}{\ensuremath{\textsc{cpint}}}
+\newcommand{\ioi}{\ensuremath{\textsc{ioi}}}
+
+\DeclareMathOperator{\fcpitch}{\mathit{cpitch}}
+\DeclareMathOperator{\fdur}{\mathit{dur}}
+
+% Symbolic representation of metre
+\newcommand{\TMI}{\ensuremath{\mathcal{T}}}
+\DeclareMathOperator{\flabel}{\mathit{label}}
+\DeclareMathOperator{\froot}{\mathit{root}}
+\DeclareMathOperator{\fdepth}{\mathit{depth}}
+\DeclareMathOperator{\flevel}{\mathit{level}}
+\DeclareMathOperator{\fparent}{\mathit{parent}}
+\DeclareMathOperator{\fchildren}{\mathit{children}}
+\DeclareMathOperator{\fisleaf}{\mathit{is-leaf}}
+\DeclareMathOperator{\fleafnodes}{\mathit{leaf-nodes}}
+\DeclareMathOperator{\fchild}{\mathit{child}}
+\DeclareMathOperator{\fheight}{\mathit{height}}
+\DeclareMathOperator{\farity}{\mathit{arity}}
+\DeclareMathOperator{\fposition}{\mathit{position}}
+
+\DeclareMathOperator{\fpioi}{\mathit{p-ioi}}
+\DeclareMathOperator{\fonset}{\mathit{onset}}
+\DeclareMathOperator{\faenergy}{\mathit{a-energy}}
+\DeclareMathOperator{\fcard}{\mathit{cardinality}}
+\DeclareMathOperator{\fmeanpioi}{\mathit{mean-p-ioi}}
+\DeclareMathOperator{\fmeanaenergy}{\mathit{mean-a-energy}}
+
+% Conceptual spaces
+\newcommand{\metrep}{\textsc{\mbox{metre-p}}}
+\newcommand{\metres}{\textsc{\mbox{metre-s}}}
+\newcommand{\tempo}{\textsc{\mbox{tempo}}}
+\newcommand{\meanPulseIOI}[1]{\ensuremath{\textsc{mean\_p\_ioi}^{#1}}}
+\newcommand{\meanAttEnergy}[1]{\ensuremath{\textsc{mean\_a\_energy}^{#1}}}
+\newcommand{\cratio}[1]{\ensuremath{\textsc{c\_ratio}^{#1}}}
+
+\newcommand{\pulseIOI}[1]{\ensuremath{\textsc{p\_ioi}^{#1}}}
+\newcommand{\attEnergy}[1]{\ensuremath{\textsc{a\_energy}^{#1}}}
+
+\newcommand{\nnk}[1]{\ensuremath{k\text{#1}}}
+\newcommand{\mathkequals}[1]{\ensuremath{k\text{~=~#1}}}
+\newcommand{\mathnequals}[1]{\ensuremath{n\text{~=~#1}}}
+
+% Algorithms
+\DeclareMathOperator{\mapTreeMeanPulseIOI}{\mathtt{MAP\_T\_MEAN\_PIOI}}
+\DeclareMathOperator{\mapTreeMeanEnergy}{\mathtt{MAP\_T\_MEAN\_AENERGY}}
+\DeclareMathOperator{\mapTreeCRatio}{\mathtt{MAP\_T\_MEAN\_CRATIO}}
+
+\DeclareMathOperator{\mapTreePulseIOI}{\mathtt{MAP\_T\_PIOI}}
+%\DeclareMathOperator{\fabsDepthOffset}{\mathtt{ABS\_CYCLE\_DEPTH\_OFFSET}}
+\DeclareMathOperator{\fabsDepthOffset}{\mathit{abs-depth-offset}}
+%\DeclareMathOperator{\fwithinCycleOffset}{\mathtt{WITHIN\_CYCLE\_NODE\_OFFSET}}
+\DeclareMathOperator{\fwithinCycleOffset}{\mathit{within-cycle-offset}}
+\DeclareMathOperator{\fillIOIDomain}{\mathtt{FILL\_PIOI\_DOMAIN}}
+\DeclareMathOperator{\repeatSubSeq}{\mathtt{REPEAT\_SUB\_SEQ}}
+\DeclareMathOperator{\mapTreeAttEnergy}{\mathtt{MAP\_T\_AENERGY}}
+\DeclareMathOperator{\fabsWithinNCycleOffset}{\mathit{abs-within-n-cycle-offset}}
