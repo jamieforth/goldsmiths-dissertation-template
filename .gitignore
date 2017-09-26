@@ -1,0 +1,25 @@
+tmp
+
+# LaTex
+*.aux
+*.bbl
+*.blg
+*.bst
+*.dvi
+*.fls
+*.idx
+*.lof
+*.log
+*.nav
+*.out
+*.snm
+*.toc
+*.vrb
+*blx.bib
+*.bcf
+*.run.xml
+*.fdb_latexmk
+*.upa
+*.upb
+auto
+comment.cut
