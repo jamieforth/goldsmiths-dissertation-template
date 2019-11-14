@@ -1,34 +1,43 @@
 \renewcommand\maketitle{
   \begin{titlepage}
     \clearpage
+    \fancyhf{}
+    \rhead{
+      \includegraphics[width=50mm]{images/goldsmiths-logo-pantone-442.pdf}
+    }
+    \renewcommand{\headrulewidth}{0pt}
 
+    \thispagestyle{fancyplain}
     \begin{center}
-      \vspace*{1in}
+      \vspace*{1.5in}
       \noindent\begin{minipage}[t]{.85\textwidth}
         \centering\large
 
-        {\LARGE The title}
+        {\LARGE \thetitle}
       \end{minipage}
 
       \par
-      \vspace{1.5in}
-      {\large Your name}
-      \par
+      \vspace{1.0in}
+      {\large \theauthor}
+
       \vfill
+
+      \ifdef{\thesupervisor}{\large Supervisor: \thesupervisor}
+
+      \par
+      \vspace{1.0in}
       Submitted in partial fulfilment of the requirements\\
-      for the degree of Doctor of Philosophy\\
+      for the degree of \thedegree\\
       of the
       University of London.
       \par
-      \vspace{0.5in}
+      \vspace{0.25in}
       Department of Computing
       \par
-      %\vspace{0.5in}
       Goldsmiths, University of London
       \par
       \vspace{0.5in}
-      The date
-      \vspace{0.3in}
+      \thedate
     \end{center}
   \end{titlepage}
 

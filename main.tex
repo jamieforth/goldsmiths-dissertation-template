@@ -6,80 +6,63 @@
 
 \usepackage[a4paper,top=3cm,bottom=3cm,left=4cm,right=3cm]{geometry}
 
+% Provides useful macros for custom cover page.
+\usepackage{titling}
+
+% Date formatting.
+\usepackage[useregional]{datetime2}
+\DTMusemodule{english}{en-GB}
+\DTMlangsetup{showdayofmonth=false}
+
+% Fancy header for cover page.
+\usepackage{fancyhdr}
+
 \usepackage{graphicx}           % \includegraphics
-\usepackage{grffile}            % allow periods and spaces in graphics
-                                % file names
+\usepackage{svg}                % \includesvg
 
-\usepackage{caption}            % flexible captions
-\usepackage{float}              % custom floats and the H option
-\usepackage{subfig}             % combine several figures into one
-\usepackage{wrapfig}            % for figure placement
-\usepackage{rotating}           % for sideways figures and tables
+\usepackage{grffile}            % Allow periods and spaces in graphics
+                                % file names.
 
-\usepackage{longtable}          % multipage tables
-\usepackage{tabu}               % tabular, tabular* and tabularx
-                                % replacements
-\usepackage{booktabs}           % prettier tables
+\usepackage{caption}            % Flexible captions.
+\usepackage{float}              % Custom floats and the H option.
+\usepackage{subfig}             % Combine several figures into one.
+\usepackage{wrapfig}            % For figure placement
+\usepackage{rotating}           % For sideways figures and tables.
 
-\usepackage{hyperref}           % for cross references
-\hypersetup{
- pdfauthor={},
- pdftitle={},
- pdfkeywords={},
- pdfsubject={},
- pdfcreator={},
- pdflang={British},
- colorlinks,
- linkcolor=,
- urlcolor=
-}
+\usepackage{longtable}          % Multipage tables.
+\usepackage{tabu}               % Provides tabular, tabular* and
+                                % tabularx replacements.
+\usepackage{booktabs}           % Prettier tables.
 
-\usepackage{fontspec}
-\defaultfontfeatures{Mapping=tex-text}
-\setmainfont{Linux Libertine O}
-\setsansfont{Linux Biolinum O}
-\setmonofont{Inconsolata}
-% \setmainfont{Liberation Serif}
-% \setsansfont{Liberation Sans}
-% \setmonofont{Liberation Mono}
+\usepackage{fontspec}           % For setting fonts.
 
-
-\usepackage{csquotes}           % context sensitive quotations
-\usepackage{polyglossia}        % babel replacement for xelatex
+\usepackage{csquotes}           % Context sensitive quotations
+\usepackage{polyglossia}        % Babel replacement for xelatex
 \setmainlanguage[variant=uk]{english}
 
-\usepackage{amssymb}            % additional maths symbols
-\usepackage{amsthm}             % for theorems etc.
+\usepackage{amssymb}            % Additional maths symbols.
+\usepackage{amsthm}             % For theorems etc.
 
-\usepackage{mathtools}          % amsmath plus fixes
-\usepackage{unicode-math}       % include unicode characters in maths
+\usepackage{mathtools}          % amsmath plus fixes.
+\usepackage{unicode-math}       % Include unicode characters in maths.
 
-\usepackage{algorithmic}        % typeset pseudo-code
-\usepackage[chapter]{algorithm} % float algorithmic blocks (e.g. add caption)
+\usepackage{algorithmic}        % Typeset pseudo-code.
+\usepackage[chapter]{algorithm} % Float algorithmic blocks (e.g. add caption).
 
-\usepackage{url}                % typeset urls
+\usepackage{url}                % Typeset urls.
 
-% If you use Tikz
-% \usepackage{tikz}
-% \usetikzlibrary{fit}
-% \usetikzlibrary{shapes}
-% \usetikzlibrary{external}
-% \tikzexternalize
-% \tikzset{external/system call={xelatex \tikzexternalcheckshellescape -halt-on-error -interaction=batchmode -jobname "\image" "\texsource"}}
-% \tikzsetexternalprefix{extfigures/}
-
-\usepackage{setspace}           % increase line-spacing
+\usepackage{setspace}           % Increase line-spacing.
 \onehalfspacing
 
-\usepackage{paralist}           % less space in lists
+\usepackage{paralist}           % Less space in lists.
 \let\itemize\compactitem
 \let\description\compactdesc
 \let\enumerate\compactenum
 
-\usepackage{chngcntr}           % continuous footnote counting
+\usepackage{chngcntr}           % Continuous footnote counting.
 \counterwithout{footnote}{chapter}
 
-% biblatex+biber for references
+% Use biblatex+biber for references.
 \usepackage[style=authoryear,backend=biber]{biblatex}
 \ExecuteBibliographyOptions{
   sorting=nyt,
@@ -95,35 +78,71 @@
 
 \addbibresource{refs.bib}
 
-\author{author}
-\date{\today}
-\title{title}
+\setmainfont{Libertinus Serif}
+\setsansfont{Libertinus Sans}
+\setmathfont{Libertinus Math}
+\setmonofont{Libertinus Mono}
+% \setmonofont{Roboto Mono}
 
-\input{symbols}                 % custom latex commands
-\input{front-matter}            % title page
+\author{Your name}
+\date{\today}
+\title{The title}
+
+\NewDocumentCommand{\supervisor}{m}{\newcommand{\thesupervisor}{#1}}
+% \supervisor{Dr. A Anon}
+
+\NewDocumentCommand{\degree}{m}{\newcommand{\thedegree}{#1}}
+\degree{Doctor of Philosophy}
+%\degree{BSc Creative Computing}
+
+
+\usepackage{hyperref}           % For cross references.
+\hypersetup{
+ pdfauthor={\theauthor},
+ pdftitle={\thetitle},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={},
+ pdflang={British},
+ colorlinks,
+ linkcolor=,
+ urlcolor=gray
+}
+
+% Custom latex commands.
+\input{symbols}
+
+% Custom title page.
+\input{text/0-front-matter/00-cover.tex}
 
 \begin{document}
 
 \maketitle
 
-\include{abstract}
-\include{acknowledgements}
-\include{license}
-\include{publications}
+\include{text/0-front-matter/01-abstract}
+\include{text/0-front-matter/02-acknowledgements}
+\include{text/0-front-matter/03-license}
+\include{text/0-front-matter/04-publications}
 
 \tableofcontents
 \listoftables
 \listoffigures
-\include{abbreviations}
+\include{text/0-front-matter/05-abbreviations}
 
-\include{introduction}
+% Chapters
 
-% additional chapters…
+\include{text/1-chapters/00-introduction}
+%\include{text/1-chapters/01-background}
+%\include{text/1-chapters/02-design}
+%\include{text/1-chapters/03-implementation}
+%\include{text/1-chapters/04-testing}
+%\include{text/1-chapters/05-evaluation}
+\include{text/1-chapters/06-conclusions}
 
-\include{conclusions}
+% Appendices
 
 \appendix
-\include{notational-conventions}
+\include{text/2-appendices/00-notational-conventions}
 
 \printbibliography
 \end{document}
