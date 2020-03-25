@@ -1,14 +1,9 @@
-### Goldsmiths PhD Thesis Template ###
+### Goldsmiths third-year project report template ###
 
 This is a hastily stripped down version of my PhD dissertation LaTeX
-document (which was generated from org-mode…), in the hope it might be
-useful for others looking to format similar documents vaguely
-conformant to Goldsmiths, University of London guidelines.
+document (which was generated from org-mode…).
 
-Something like the [UCL
-template](https://github.com/UCL/ucl-latex-thesis-templates) may be a
-better approach.
+It assumes a modern LaTeX tool chain (i.e. XeLaTeX and Biber).
 
-Some ideas here were taken from Dan Stowell’s (Queen Mary University
-of London)
-[thesis](https://www.overleaf.com/latex/templates/queen-mary-university-of-london/fwfyjjkcswpw#.Wcp04HVSxhE).
+See main.pdf for an example final document.
+
