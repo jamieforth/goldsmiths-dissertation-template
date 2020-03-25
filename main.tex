@@ -4,20 +4,9 @@
 % Compile with latexmk should Just Work™
 % latexmk -xelatex -shell-escape main.tex
 
-\documentclass[12pt, a4paper]{report}
+\documentclass[12pt, a4paper]{gsdiss}
 
 \usepackage[a4paper,top=3cm,bottom=3cm,left=4cm,right=3cm]{geometry}
-
-% Provides useful macros for custom cover page.
-\usepackage{titling}
-
-% Date formatting.
-\usepackage[useregional]{datetime2}
-\DTMusemodule{english}{en-GB}
-\DTMlangsetup{showdayofmonth=false}
-
-% Fancy header for cover page.
-\usepackage{fancyhdr}
 
 \usepackage{graphicx}           % \includegraphics
 \usepackage{svg}                % \includesvg
@@ -25,16 +14,12 @@
 \usepackage{grffile}            % Allow periods and spaces in graphics
                                 % file names.
 
-\usepackage{caption}            % Flexible captions.
 \usepackage{float}              % Custom floats and the H option.
 \usepackage{subfig}             % Combine several figures into one.
 \usepackage{wrapfig}            % For figure placement
 \usepackage{rotating}           % For sideways figures and tables.
 
 \usepackage{longtable}          % Multipage tables.
-\usepackage{tabu}               % Provides tabular, tabular* and
-                                % tabularx replacements.
-\usepackage{booktabs}           % Prettier tables.
 
 \usepackage{fontspec}           % For setting fonts.
 
@@ -51,18 +36,14 @@
 \usepackage{algorithmic}        % Typeset pseudo-code.
 \usepackage[chapter]{algorithm} % Float algorithmic blocks (e.g. add caption).
 
-\usepackage{url}                % Typeset urls.
+\usepackage{minted}             % Typesetting code.
 
-\usepackage{setspace}           % Increase line-spacing.
-\onehalfspacing
+\usepackage{url}                % Typeset urls.
 
 \usepackage{paralist}           % Less space in lists.
 \let\itemize\compactitem
 \let\description\compactdesc
 \let\enumerate\compactenum
-
-\usepackage{chngcntr}           % Continuous footnote counting.
-\counterwithout{footnote}{chapter}
 
 % Use biblatex+biber for references.
 \usepackage[style=authoryear,backend=biber]{biblatex}
@@ -83,19 +64,15 @@
 \setmainfont{Libertinus Serif}
 \setsansfont{Libertinus Sans}
 \setmathfont{Libertinus Math}
-\setmonofont{Libertinus Mono}
-% \setmonofont{Roboto Mono}
+% \setmonofont{Libertinus Mono}
+\setmonofont{Roboto Mono}
 
 \author{Your name}
 \date{\today}
 \title{The title}
-
-\NewDocumentCommand{\supervisor}{m}{\newcommand{\thesupervisor}{#1}}
-% \supervisor{Dr. A Anon}
-
-\NewDocumentCommand{\degree}{m}{\newcommand{\thedegree}{#1}}
-\degree{Doctor of Philosophy}
-%\degree{BSc Creative Computing}
+\supervisor{Dr. A Anon}
+% \degree{Doctor of Philosophy}
+\degree{BSc Creative Computing}
 
 
 \usepackage{hyperref}           % For cross references.
@@ -123,8 +100,8 @@
 
 \include{text/0-front-matter/01-abstract}
 \include{text/0-front-matter/02-acknowledgements}
-\include{text/0-front-matter/03-license}
-\include{text/0-front-matter/04-publications}
+% \include{text/0-front-matter/03-license}
+% \include{text/0-front-matter/04-publications}
 
 \tableofcontents
 \listoftables
@@ -134,11 +111,11 @@
 % Chapters
 
 \include{text/1-chapters/00-introduction}
-%\include{text/1-chapters/01-background}
-%\include{text/1-chapters/02-design}
-%\include{text/1-chapters/03-implementation}
-%\include{text/1-chapters/04-testing}
-%\include{text/1-chapters/05-evaluation}
+\include{text/1-chapters/01-background}
+\include{text/1-chapters/02-design}
+\include{text/1-chapters/03-implementation}
+\include{text/1-chapters/04-testing}
+\include{text/1-chapters/05-evaluation}
 \include{text/1-chapters/06-conclusions}
 
 % Appendices
