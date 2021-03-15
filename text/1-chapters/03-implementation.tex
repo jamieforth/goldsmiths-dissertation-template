@@ -12,7 +12,7 @@ optimisation trick you implemented. Do not copy and paste lots of
 boilerplate code in your report, refer to your git repository.
 
 \begin{listing}[H]
-\begin{minted}[numbers=left,python3]{python}
+\begin{lstlisting}
 # Generate example data.
 np.random.seed(13)              # Seed the random number generator.
 n=50                            # Number of observations.
@@ -40,6 +40,44 @@ ax.yaxis.set_major_formatter(
 ax.set_xlabel('happiness raitings')
 
 plt.show()
-\end{minted}
-\caption{Example of typesetting code. Keep code snippets short!}
+\end{lstlisting}
+\caption{Example of typesetting code with \texttt{listing}. Keep code snippets short!}
 \end{listing}
+
+% \begin{listing}[H]
+% \begin{minted}[numbers=left,python3]{python}
+% # Generate example data.
+% np.random.seed(13)              # Seed the random number generator.
+% n=50                            # Number of observations.
+% happiness_levels = ['very sad', 'sad', 'neutral', 'happy',
+%                     'very happy']
+% happiness_prob = [0.05, 0.2, 0.3, 0.35, 0.1]
+
+% s = pd.Series(np.random.choice(happiness_levels, n,
+%                                p=happiness_prob),
+%               name='happiness')
+
+% # Set correct data type.
+% s = s.astype(
+%     pd.api.types.CategoricalDtype(
+%         ordered=True,
+%         categories=happiness_levels))
+
+% # Compute percentages.
+% pc = s.value_counts(sort=False, normalize=True) * 100
+
+% # Plot.
+% ax = pc.plot.bar(rot=0)
+% ax.yaxis.set_major_formatter(
+%     mpl.ticker.PercentFormatter(decimals=0))
+% ax.set_xlabel('happiness raitings')
+
+% plt.show()
+% \end{minted}
+% \caption{Example of typesetting code with \texttt{minted}. Keep code snippets short!}
+% \end{listing}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../../main"
+%%% End:

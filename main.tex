@@ -9,7 +9,10 @@
 \usepackage[a4paper,top=3cm,bottom=3cm,left=4cm,right=3cm]{geometry}
 
 \usepackage{graphicx}           % \includegraphics
-\usepackage{svg}                % \includesvg
+
+% You only need this if you are using SVG images, and it relies on the
+% available of external programmes like inkscape.
+% \usepackage{svg}                % \includesvg
 
 \usepackage{grffile}            % Allow periods and spaces in graphics
                                 % file names.
@@ -36,7 +39,10 @@
 \usepackage{algorithmic}        % Typeset pseudo-code.
 \usepackage[chapter]{algorithm} % Float algorithmic blocks (e.g. add caption).
 
-\usepackage{minted}             % Typesetting code.
+% Code formatting: Use either listings or minted to typeset code.
+\usepackage{listings}
+% Minted requires Python and the Pygments package.
+\usepackage{minted}
 
 \usepackage{url}                % Typeset urls.
 
