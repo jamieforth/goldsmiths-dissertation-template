@@ -53,6 +53,9 @@
 
 % Use biblatex+biber for references.
 \usepackage[style=authoryear,backend=biber]{biblatex}
+\DefineBibliographyStrings{english}{%
+  bibliography = {References},
+}
 \ExecuteBibliographyOptions{
   sorting=nyt,
   maxcitenames=2,
@@ -126,7 +129,7 @@
 
 % References
 
-\printbibliography
+\printbibliography[heading=bibintoc]
 
 % Appendices
 
