@@ -8,10 +8,19 @@
 % Provides useful macros for custom cover page.
 \RequirePackage{titling}
 
+% Set margins.
+\usepackage[a4paper,top=3cm,bottom=3cm,left=4cm,right=3cm]{geometry}
+
+% Provides \includegraphics.
+\usepackage{graphicx}
+
+% Allow periods and spaces in graphics file names.
+\usepackage{grffile}
+
 % Date formatting.
 \RequirePackage[useregional]{datetime2}
 \DTMusemodule{english}{en-GB}
-\DTMlangsetup{showdayofmonth=false}
+%\DTMlangsetup{showdayofmonth=false}
 
 % Fancy header for cover page.
 \RequirePackage{fancyhdr}
