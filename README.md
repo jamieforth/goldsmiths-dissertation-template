@@ -1,6 +1,8 @@
-### Goldsmiths dissertation template ###
+# Goldsmiths dissertation template
 
-Requires a modern LaTeX tool chain (i.e. XeLaTeX and Biber).
+Designed to be used with modern LaTeX tool chain (i.e. XeLaTeX and
+Biber), but should also work with traditional pdfLatex.
 
-See main.pdf for an example final document.
+A live version of this template can be viewed at Overleaf.
 
+https://www.overleaf.com/read/ycfxkxtxhjxn
