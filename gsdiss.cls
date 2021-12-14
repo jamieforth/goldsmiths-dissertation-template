@@ -9,13 +9,13 @@
 \RequirePackage{titling}
 
 % Set margins.
-\usepackage[a4paper,top=3cm,bottom=3cm,left=4cm,right=3cm]{geometry}
+\RequirePackage[a4paper,top=3cm,bottom=3cm,left=4cm,right=3cm]{geometry}
 
 % Provides \includegraphics.
-\usepackage{graphicx}
+\RequirePackage{graphicx}
 
 % Allow periods and spaces in graphics file names.
-\usepackage{grffile}
+\RequirePackage{grffile}
 
 % Date formatting.
 \RequirePackage[useregional]{datetime2}
@@ -43,7 +43,7 @@
 \ProcessOptions\relax
 
 % Provides NewDocumentCommand.
-\usepackage{xparse}
+\RequirePackage{xparse}
 
 % --------------------------------------------------------------------
 % Custom commands
